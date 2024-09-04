@@ -26,6 +26,7 @@ namespace Test_ex.Controllers
         public async Task<IActionResult> GetById(long id)
         {
             var spec = await _service.GetById(id);
+            
             return Ok(spec);
         }
 

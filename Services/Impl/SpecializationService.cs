@@ -36,6 +36,8 @@ namespace Test_ex.Services.Impl
         public async Task<SpecializationDto> GetById(long id)
         {
             var spec=await _repo.GetById(id);
+            if (spec == null)
+                throw new Exception($"Объект с Id {id} не найден");
             return _mapper.Map(spec);
         }
 
