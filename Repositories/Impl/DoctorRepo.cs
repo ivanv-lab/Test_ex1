@@ -49,5 +49,9 @@ namespace Test_ex.Repositories.Impl
                 = EntityState.Modified;
             await _context.SaveChangesAsync();
         }
+        public Task<int> Count()
+        {
+            return _context.Doctors.CountAsync();
+        }
     }
 }

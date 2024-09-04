@@ -9,5 +9,6 @@ namespace Test_ex.Repositories.Interfaces
         public Task Add(Doctor doctor);
         public Task Update(Doctor doctor);
         public Task Delete(long id);
+        public Task<int> Count();
     }
 }

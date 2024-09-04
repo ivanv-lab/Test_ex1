@@ -2,6 +2,6 @@
 {
     public class CabinetDto
     {
-        public int Number { get; set; }
+        public string Number { get; set; }
     }
 }

@@ -9,5 +9,6 @@ namespace Test_ex.Repositories.Interfaces
         public Task Add(Region region);
         public Task Update(Region region);
         public Task Delete(long id);
+        public Task<int> Count();
     }
 }

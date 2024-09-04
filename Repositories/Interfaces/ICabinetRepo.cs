@@ -9,5 +9,6 @@ namespace Test_ex.Repositories.Interfaces
         public Task Add(Cabinet cabinet);
         public Task Update(Cabinet cabinet);
         public Task Delete(long id);
+        public Task<int> Count();
     }
 }

@@ -66,7 +66,9 @@ namespace Test_ex.Services.Impl
         public async Task<SpecializationDto> Update(long id, SpecializationDto dto)
         {
             var updateSpec = await _repo.GetById(id);
-            updateSpec=_mapper.UpdateMap(updateSpec, dto);
+            if (updateSpec == null)
+                throw new Exception($"Объект с Id {id} не найден");
+            updateSpec =_mapper.UpdateMap(updateSpec, dto);
             await _repo.Update(updateSpec);
             return _mapper.Map(updateSpec);
         }
