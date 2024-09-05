@@ -73,10 +73,10 @@ namespace Test_ex.Services.Impl
                     doctors=doctors.OrderByDescending(d=>d.Fullname)
                         .ToList(); break;
                 case "region":
-                    doctors=doctors.OrderBy(d=>d.Region.Number)
+                    doctors=doctors.OrderBy(d=>Convert.ToInt32(d.Region.Number))
                         .ToList(); break;
                 case "region_desc":
-                    doctors=doctors.OrderByDescending(d=>d.Region.Number)
+                    doctors=doctors.OrderByDescending(d=> Convert.ToInt32(d.Region.Number))
                         .ToList(); break;
                 case "cabinet":
                     doctors=doctors.OrderBy(d=>d.Cabinet.Number)
