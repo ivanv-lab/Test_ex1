@@ -61,11 +61,11 @@ namespace Test_ex.Services.Impl
             switch (sortOrder)
             {
                 case "number":
-                    regions=regions.OrderBy(r=>r.Number)
+                    regions=regions.OrderBy(r=>Convert.ToInt32(r.Number))
                         .ToList(); 
                     break;
                 case "number_desc":
-                    regions = regions.OrderByDescending(r => r.Number)
+                    regions = regions.OrderByDescending(r =>Convert.ToInt32(r.Number))
                         .ToList();
                     break;
                 default:

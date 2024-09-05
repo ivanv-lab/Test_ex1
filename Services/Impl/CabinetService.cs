@@ -66,7 +66,7 @@ namespace Test_ex.Services.Impl
                         .ToList();
                     break;
                 case "number_desc":
-                    cabinets = cabinets.OrderByDescending(c => c.Number)
+                    cabinets = cabinets.OrderByDescending(c =>c.Number)
                         .ToList();
                     break;
                 default:

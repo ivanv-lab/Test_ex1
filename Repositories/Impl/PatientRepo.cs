@@ -31,6 +31,7 @@ namespace Test_ex.Repositories.Impl
         {
             return await _context.Patients
                 .Where(p=>!p.IsDeleted)
+                .Include(p=>p.Region)
                 .ToListAsync();
         }
 
@@ -50,7 +51,7 @@ namespace Test_ex.Repositories.Impl
         }
         public Task<int> Count()
         {
-            return _context.Patients.CountAsync();
+            return _context.Patients.Where(c => !c.IsDeleted).CountAsync();
         }
     }
 }

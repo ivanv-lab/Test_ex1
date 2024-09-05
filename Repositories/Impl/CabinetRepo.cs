@@ -50,7 +50,8 @@ namespace Test_ex.Repositories.Impl
         }
         public Task<int> Count()
         {
-            return _context.Cabinets.CountAsync();
+            return _context.Cabinets
+                .Where(c=>!c.IsDeleted).CountAsync();
         }
     }
 }

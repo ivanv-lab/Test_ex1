@@ -26,10 +26,20 @@ namespace Test_ex
             builder.Services.AddScoped<AppDbContext>();
 
             builder.Services.AddTransient<IMapper<Specialization, SpecializationDto>, SpecializationMap>();
+            builder.Services.AddTransient<IMapper<Region,RegionDto>,RegionMap>();
+            builder.Services.AddTransient<IMapper<Cabinet,CabinetDto>,CabinetMap>();
+            builder.Services.AddTransient<IMapper<Patient, PatientDto>, PatientMap>();
 
             builder.Services.AddTransient<ISpecializationService, SpecializationService>();
+            builder.Services.AddTransient<IRegionService, RegionService>();
+            builder.Services.AddTransient<ICabinetService, CabinetService>();
+            builder.Services.AddTransient<IPatientService, PatientService>();
 
             builder.Services.AddTransient<ISpecializationRepo, SpecializationRepo>();
+            builder.Services.AddTransient<IRegionRepo, RegionRepo>();
+            builder.Services.AddTransient<ICabinetRepo, CabinetRepo>();
+            builder.Services.AddTransient<IPatientRepo, PatientRepo>();
+
 
             var app = builder.Build();
 

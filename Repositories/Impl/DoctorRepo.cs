@@ -32,6 +32,9 @@ namespace Test_ex.Repositories.Impl
         {
             return await _context.Doctors
                 .Where(d => !d.IsDeleted)
+                .Include(d=>d.Region)
+                .Include(d=>d.Cabinet)
+                .Include(d=>d.Specialization)
                 .ToListAsync();
         }
 
@@ -51,7 +54,7 @@ namespace Test_ex.Repositories.Impl
         }
         public Task<int> Count()
         {
-            return _context.Doctors.CountAsync();
+            return _context.Doctors.Where(c => !c.IsDeleted).CountAsync();
         }
     }
 }
